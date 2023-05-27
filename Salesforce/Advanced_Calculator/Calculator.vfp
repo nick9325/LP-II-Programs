@@ -1,0 +1,20 @@
+<apex:page controller="Calculator">
+    <apex:sectionHeader title="Calculator" subtitle="Advanced Calculator"/>
+    <apex:form >
+    <apex:pageBlock title="Simple Calculator">
+        <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="Power" action="{!power}" reRender="res"/>
+        <apex:commandButton value="Prime" action="{!primeN}" reRender="res"/>
+        <apex:commandButton value="Fibonacci" action="{!fib}" reRender="res"/>
+        <apex:commandButton value="Pallindrome" action="{!pal}" reRender="res"/>
+            </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Calculator">
+            <apex:inputText label="Enter value of a" html-placeholder="First Number" value="{!a}"/>
+            <apex:inputText label="Enter value of b" html-placeholder="Second Number" value="{!b}"/>
+            <apex:outputText label="Result" value="{!res}" id="res"/>
+  
+        </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

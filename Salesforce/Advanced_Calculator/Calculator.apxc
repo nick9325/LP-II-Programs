@@ -1,0 +1,76 @@
+public class Calculator {
+    
+    public integer a {get;set;}
+    public integer b {get;set;}
+    public String res {get;set;}
+    
+    
+    public void power(){
+        integer p=1;
+        for(integer i=0;i<b;i++){
+            p=p*a;
+        }
+        
+        res=(a+' to power '+ b +' is '+p);
+        
+    }
+    
+    public void primeN(){
+        integer m=a/2;
+        boolean flag=false;
+        
+        if(m==0 || m==1){
+            res=(a+' not Not a Prime Number');
+        }
+        else{
+            for(integer i=2;i<=m;i++){
+                if(Math.mod(a, i)==0){
+                    res=(a+' is Prime Number');
+                    flag=true;
+                    break;
+                }
+            }
+            
+        }
+        if(flag==false){
+            res=(a+' is Prime Number');
+        }
+    }
+    
+    
+    public void fib(){
+        
+        integer n1=0,n2=1,next;
+        
+        res=n1+' '+n2;
+        
+        for(integer i=2;i<=a;i++){
+            next=n1+n2;
+            res=res+' '+next;
+            n1=n2;
+            n2=next;
+        }
+    }
+    
+    
+    public void pal(){
+        
+        integer originaln=a,sum=0;
+        
+        while(a!=0){
+            integer last=Math.mod(a,10);
+            
+            sum=sum*10+last;
+            
+            a=a/10;
+        }
+        
+        if(sum==originaln){
+            res=(originaln + ' is palindrome number');
+        }
+        else{
+            res=(originaln + ' is not palindrome number');
+        }
+        
+    }
+}
